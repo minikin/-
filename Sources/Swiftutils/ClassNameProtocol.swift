@@ -5,24 +5,26 @@
 //  Created by Sasha Prokhorenko on 27.06.19.
 //
 
+import Foundation
+
 /// Get a class name
 ///
-/// Example of use:
-///
+/// ```
 /// UIView.className   => "UIView"
 ///
 /// UILabel().className => "UILabel"
+///```
 public protocol ClassNameProtocol {
     static var className: String { get }
     var className: String { get }
 }
 
 public extension ClassNameProtocol {
-    public static var className: String {
+    static var className: String {
         return String(describing: self)
     }
     
-    public var className: String {
+    var className: String {
         return type(of: self).className
     }
 }
