@@ -1,6 +1,6 @@
 //
 //  UITableView+Extensions.swift
-//  
+//
 //
 //  Created by Sasha Prokhorenko on 27.06.19.
 //
@@ -18,7 +18,7 @@ public extension UITableView {
         let nib = UINib(nibName: className, bundle: bundle)
         register(nib, forCellReuseIdentifier: className)
     }
-    
+
     /// Register UITableViewCell
     ///
     /// ```
@@ -27,13 +27,13 @@ public extension UITableView {
     func register<T: UITableViewCell>(cellTypes: [T.Type], bundle: Bundle? = nil) {
         cellTypes.forEach { register(cellType: $0, bundle: bundle) }
     }
-    
+
     /// Dequeue UITableViewCell
     ///
     /// ```
     /// let cell = tableView.dequeueReusableCell(with: MyCell.self, for: indexPath)
     /// ```
     func dequeueReusableCell<T: UITableViewCell>(with type: T.Type, for indexPath: IndexPath) -> T {
-        return self.dequeueReusableCell(withIdentifier: type.className, for: indexPath) as! T
+        return dequeueReusableCell(withIdentifier: type.className, for: indexPath) as! T
     }
 }

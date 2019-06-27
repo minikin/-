@@ -8,7 +8,8 @@ let package = Package(
     products: [
         .library(
             name: "Swiftutils",
-            targets: ["Swiftutils"]),
+            targets: ["Swiftutils"]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -17,9 +18,11 @@ let package = Package(
     targets: [
         .target(
             name: "Swiftutils",
-            dependencies: []),
+            dependencies: []
+        ),
         .testTarget(
             name: "SwiftutilsTests",
-            dependencies: ["Swiftutils"]),
+            dependencies: ["Swiftutils"]
+        ),
     ]
 )
